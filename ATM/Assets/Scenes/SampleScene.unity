@@ -189,8 +189,19 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &428417837 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2687982555948272693, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
+  m_PrefabInstance: {fileID: 2007237650}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +294,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &5805799919243884421
+--- !u!1 &1654987320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1654987321}
+  - component: {fileID: 1654987322}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1654987321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654987320}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1081.3619, y: 518.5004, z: -6.3275504}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1654987322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654987320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dacecf7544214cc49b36e974b4fb4054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HoldingMoneyText: {fileID: 428417837}
+  BalanceMoneyText: {fileID: 1940657524}
+--- !u!114 &1940657524 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8399072616402167281, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
+  m_PrefabInstance: {fileID: 2007237650}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &2007237650
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -295,6 +363,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1196700072468674452, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
+      propertyPath: m_Name
+      value: Banlance_Cash_txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931748340664066820, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
+      propertyPath: m_Name
+      value: Balance
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531310330783836648, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
+      propertyPath: m_Name
+      value: HoldingCash
+      objectReference: {fileID: 0}
+    - target: {fileID: 2687982555948272693, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
+      propertyPath: m_text
+      value: 000,000
+      objectReference: {fileID: 0}
     - target: {fileID: 4222659149932075764, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -305,7 +389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4222659149932075764, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4222659149932075764, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
       propertyPath: m_AnchorMax.x
@@ -378,6 +462,18 @@ PrefabInstance:
     - target: {fileID: 4222659149932075764, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037166377950842002, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
+      propertyPath: m_text
+      value: Balance
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192454401065534661, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
+      propertyPath: m_Name
+      value: Cash_txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 8399072616402167281, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
+      propertyPath: m_text
+      value: 00,000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
