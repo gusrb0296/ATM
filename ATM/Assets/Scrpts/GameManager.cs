@@ -74,18 +74,18 @@ public class GameManager : MonoBehaviour
     public void DepositInputFieldMoney()
     {
         string money = MoneyInputField.text;
-        if(int.TryParse(money, out int num))
+        if(int.TryParse(money, out int InputMomey))
         {
-            CheckEnoughDeposit(Convert.ToInt32(money));
+            CheckEnoughDeposit(InputMomey);
         }
     }
 
     public void WithdarwInputFieldMoney()
     {
         string money = MoneyInputField.text;
-        if (int.TryParse(money, out int num))
+        if (int.TryParse(money, out int InputMomey))
         {
-            CheckEnoughWithdraw(Convert.ToInt32(money));
+            CheckEnoughWithdraw(InputMomey);
         }
     }
 }
