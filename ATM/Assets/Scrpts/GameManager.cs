@@ -18,8 +18,8 @@ public class GameManager : MonoBehaviour
     public TMP_InputField MoneyInputField;
 
 
-    int HoldingMoney = 100000;
-    int BalanceMoney = 50000;
+    public static int HoldingMoney = 100000;
+    public static int BalanceMoney = 50000;
 
 
     private void Awake()
