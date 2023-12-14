@@ -8,10 +8,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
-
-    public UserData userData;
-
     public TextMeshProUGUI HoldingMoneyText;
     public TextMeshProUGUI BalanceMoneyText;
 
@@ -19,15 +15,14 @@ public class GameManager : MonoBehaviour
 
     public TMP_InputField MoneyInputField;
 
-    private void Awake()
+    private void Start()
     {
-        instance = this;
         AllMoneyUpdate();
     }
 
     public void CheckEnoughWithdraw(int money)
     {
-        if(GameManager.instance.userData.balance < money)
+        if(MoneyManager.instance.userData.balance < money)
         {
             LackOfMouneyPopUp.SetActive(true);
             return;
@@ -39,7 +34,7 @@ public class GameManager : MonoBehaviour
     }
     public void CheckEnoughDeposit(int money)
     {
-        if(GameManager.instance.userData.cash < money)
+        if(MoneyManager.instance.userData.cash < money)
         {
             LackOfMouneyPopUp.SetActive(true);
             return;
@@ -52,15 +47,15 @@ public class GameManager : MonoBehaviour
 
     public void Deposit(int money)
     {
-        GameManager.instance.userData.balance += money;
-        GameManager.instance.userData.cash -= money;
+        MoneyManager.instance.userData.balance += money;
+        MoneyManager.instance.userData.cash -= money;
         AllMoneyUpdate();
     }
 
     public void Withdraw(int money)
     {
-        GameManager.instance.userData.balance -= money;
-        GameManager.instance.userData.cash += money;
+        MoneyManager.instance.userData.balance -= money;
+        MoneyManager.instance.userData.cash += money;
         AllMoneyUpdate();
     }
 
@@ -70,8 +65,8 @@ public class GameManager : MonoBehaviour
     }
     public void AllMoneyUpdate()
     {
-        BalanceMoneyText.text = FormatNumber(GameManager.instance.userData.balance);
-        HoldingMoneyText.text = FormatNumber(GameManager.instance.userData.cash);
+        BalanceMoneyText.text = FormatNumber(MoneyManager.instance.userData.balance);
+        HoldingMoneyText.text = FormatNumber(MoneyManager.instance.userData.cash);
     }
 
     public void DepositInputFieldMoney()
