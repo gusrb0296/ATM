@@ -7,22 +7,22 @@ public class Deposit : ITradeInterface
 {
     public void InputFieldMoney()
     {
-        string money = MoneyInputField.text;
-        if (int.TryParse(money, out int num))
-        {
-            CheckEnoughDeposit(Convert.ToInt32(money));
-        }
+        //string money = MoneyInputField.text;
+        //if (int.TryParse(money, out int num))
+        //{
+        //    CheckEnoughDeposit(money);
+        //}
     }
 
     public void CheckEnoughMoney(int money)
     {
-        if (HoldingMoney < money)
-        {
-            LackOfMouneyPopUp.SetActive(true);
-        }
-        else
-        {
-            Deposit(money);
-        }
+        //if (HoldingMoney < money)
+        //{
+        //    LackOfMouneyPopUp.SetActive(true);
+        //}
+        //else
+        //{
+        //    Deposit(money);
+        //}
     }
 }

@@ -10,17 +10,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public UserData userData;
+
     public TextMeshProUGUI HoldingMoneyText;
     public TextMeshProUGUI BalanceMoneyText;
 
     public GameObject LackOfMouneyPopUp;
 
     public TMP_InputField MoneyInputField;
-
-
-    public static int HoldingMoney = 100000;
-    public static int BalanceMoney = 50000;
-
 
     private void Awake()
     {
@@ -30,9 +27,10 @@ public class GameManager : MonoBehaviour
 
     public void CheckEnoughWithdraw(int money)
     {
-        if(BalanceMoney < money)
+        if(GameManager.instance.userData.balance < money)
         {
             LackOfMouneyPopUp.SetActive(true);
+            return;
         }
         else
         {
@@ -41,9 +39,10 @@ public class GameManager : MonoBehaviour
     }
     public void CheckEnoughDeposit(int money)
     {
-        if(HoldingMoney < money)
+        if(GameManager.instance.userData.cash < money)
         {
             LackOfMouneyPopUp.SetActive(true);
+            return;
         }
         else
         {
@@ -53,39 +52,47 @@ public class GameManager : MonoBehaviour
 
     public void Deposit(int money)
     {
-        BalanceMoney += money;
-        HoldingMoney -= money;
+        GameManager.instance.userData.balance += money;
+        GameManager.instance.userData.cash -= money;
         AllMoneyUpdate();
     }
 
     public void Withdraw(int money)
     {
-        BalanceMoney -= money;
-        HoldingMoney += money;
+        GameManager.instance.userData.balance -= money;
+        GameManager.instance.userData.cash += money;
         AllMoneyUpdate();
     }
 
+    string FormatNumber(int num)
+    {
+        return string.Format("{0:N0}", num);
+    }
     public void AllMoneyUpdate()
     {
-        BalanceMoneyText.text = BalanceMoney.ToString("C");
-        HoldingMoneyText.text = HoldingMoney.ToString("C"); 
+        BalanceMoneyText.text = FormatNumber(GameManager.instance.userData.balance);
+        HoldingMoneyText.text = FormatNumber(GameManager.instance.userData.cash);
     }
 
     public void DepositInputFieldMoney()
     {
-        string money = MoneyInputField.text;
-        if(int.TryParse(money, out int num))
-        {
-            CheckEnoughDeposit(Convert.ToInt32(money));
-        }
+        //string money = MoneyInputField.text;
+        //if(int.TryParse(money, out int num))
+        //{
+        //    CheckEnoughDeposit(Convert.ToInt32(money));
+        //}
+        int.TryParse(MoneyInputField.text, out int money);
+        CheckEnoughDeposit(money);
     }
 
     public void WithdarwInputFieldMoney()
     {
-        string money = MoneyInputField.text;
-        if (int.TryParse(money, out int num))
-        {
-            CheckEnoughWithdraw(Convert.ToInt32(money));
-        }
+        //string money = MoneyInputField.text;
+        //if (int.TryParse(money, out int num))
+        //{
+        //    CheckEnoughWithdraw(Convert.ToInt32(money));
+        //}
+        int.TryParse(MoneyInputField.text, out int money);
+        CheckEnoughWithdraw(money);
     }
 }

@@ -354,6 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dacecf7544214cc49b36e974b4fb4054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userData: {fileID: 11400000, guid: a61f2416af010c6498909deb9465d2c0, type: 2}
   HoldingMoneyText: {fileID: 428417837}
   BalanceMoneyText: {fileID: 1940657524}
   LackOfMouneyPopUp: {fileID: 187854668}
@@ -628,6 +629,18 @@ PrefabInstance:
     - target: {fileID: 8512025953027464768, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711563755042512035, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
+      propertyPath: m_ContentType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711563755042512035, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
+      propertyPath: m_KeyboardType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711563755042512035, guid: cab7dd64d8094e648b86ddac1698cd61, type: 3}
+      propertyPath: m_CharacterValidation
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
